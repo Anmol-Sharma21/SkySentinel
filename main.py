@@ -1,14 +1,14 @@
 import time
-
 import requests
 from datetime import datetime
 import smtplib
 
-MY_EMAIL = "anmol.pythontest@gmail.com"
-MY_PASSWORD = "vyitymcetjrepnqz"
-MY_LAT = 28.607059
-MY_LNG = 77.105271
+MY_EMAIL = "xyz"
+MY_PASSWORD = "xyz"
+MY_LAT = 00
+MY_LNG = 00
 
+#fill your email passowrd and lat long values 
 
 def is_iss_overhead():
     response = requests.get(url="http://api.open-notify.org/iss-now.json")
@@ -47,5 +47,5 @@ while True:
         with smtplib.SMTP("smtp.gmail.com", 587) as connection:
             connection.starttls()
             connection.login(user=MY_EMAIL, password=MY_PASSWORD)
-            connection.sendmail(from_addr=MY_EMAIL, to_addrs="anmol.pythontest@yahoo.com",
+            connection.sendmail(from_addr=MY_EMAIL, to_addrs=MY_EMAIL,
                                 msg="Subject:Look Up \n\n The iss is above you")
